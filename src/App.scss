@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  background-color:rgb(12, 175, 12);
+  color: #fff;
+  font-family: inherit;
+  font-size: 20px;
+  line-height: 1em;
+  text-decoration: none;
+  border-radius: 0.2em;
+  box-shadow: 0 0.1em 0.2em #0005;
+  border: none;
+  user-select: none;
+  word-spacing: 0;
+  letter-spacing: 0em;
+  cursor: pointer;
+}
+
+.card-header {
+  background-color: #61dafb;
+}
+
+.input-group-text {
+  background-color:rgb(238, 189, 144)
+}
