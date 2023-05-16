@@ -2,26 +2,29 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Create from './Components/Create';
-//import { useEffect, useState } from 'react';
-//import { crudCreate, crudRead } from './Functions/localStorageCrud';
+import { useEffect, useState } from 'react';
+import { crudCreate, crudRead } from './Functions/localStorageCrud';
 import List from './Components/List';
 
-const KEY = allAcounts;
+const KEY = 'allAccounts';
+
 export default function App() {
 
-  const [acount, setAcount] = useState(null);
+  const [listUpdate, setListUpdate] = useState(Date.now());
+  const [account, setAccount] = useState(null);
 
     const [createData, setCreateData] = useState(null);
 
     useEffect(_ => {
-        setAcount(crudRead(KEY));
-    }, []);
+        setAccount(crudRead(KEY));
+    }, [listUpdate]);
 
     useEffect(_ => {
         if (null === createData) {
             return;
         }
-        crudCreate(KEY, createData)
+        crudCreate(KEY, createData);
+        setListUpdate(Date.now());
     }, [createData]);
 
 
@@ -29,10 +32,12 @@ export default function App() {
       <div className='container'>
         <div className='row'>
           <div className='col-6'>
-              <Create />
+              <Create setCreateData={setCreateData} />
           </div>
           <div className='col-6'>
-              <List />
+              <List 
+              account={account}
+              />
           </div>
 
         </div>

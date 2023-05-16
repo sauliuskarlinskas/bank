@@ -1,23 +1,28 @@
 
-import { useState } from "react"
+import {useState } from 'react';
 
-export default function Create() {
+export default function Create({setCreateData}) {
 
-    const [acount, setAcount] = useState();
+    const [account, setAccount] = useState('Name,Last name');
+
+    const create = _ => {
+        setCreateData({account});
+        setAccount('name','last-name' );
+    }
 
     return (
         <div className="card m-5">
-            <h5 className="card-header">Create new acount</h5>
+            <h5 className="card-header">Create new account</h5>
             <div className="card-body">
                 <div className="input-group mb-3">
-                    <span className="input-group-text" id="inputGroup-sizing-default">Name</span>
-                    <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                    <span id='name' className="input-group-text" >Name</span>
+                    <input type="text" className="form-control"/>
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text" id="inputGroup-sizing-default">Second name</span>
-                    <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
+                    <span id='last-name' className="input-group-text" >Last name</span>
+                    <input type="text" className="form-control"/>
                 </div>
-                <button className="btn">Create acount</button>
+                <button className="btn" onClick={create}>Create account</button>
             </div>
         </div>
     )
