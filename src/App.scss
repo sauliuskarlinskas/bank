@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
 }
 
 .App-link {
@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,8 +40,7 @@
 
 .btn {
   display: inline-block;
-  padding: 0.5em 1.2em;
-  background-color:rgb(12, 175, 12);
+  background-color: #0caf0c;
   color: #fff;
   font-family: inherit;
   font-size: 20px;
@@ -55,14 +55,55 @@
   cursor: pointer;
 }
 
+.btn-del {
+  display: inline-block;
+  background-color: #bf0f0f;
+  color: #fff;
+  font-family: inherit;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 0.2em;
+  box-shadow: 0 0.1em 0.2em #0005;
+  border: none;
+  user-select: none;
+  word-spacing: 0;
+  letter-spacing: 0em;
+  cursor: pointer;
+}
+
+
 .card-header {
   background-color: #61dafb;
 }
 
 .input-group-text {
-  background-color:rgb(238, 189, 144)
+  background-color: #eebd90
 }
 
 .account-card {
-  background-color: coral;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-group-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.count {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.account-card {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.modal {
+  display: block;
 }

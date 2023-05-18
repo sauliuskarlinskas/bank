@@ -15,6 +15,6 @@ export const crudRead = key => read(key);
 
 export const crudCreate = (key, data) => write(key, [...read(key), { ...data, id: uuidv4() }]);
 
-export const editCrud = (key, data, id) => write(key, read(key).map(d => d.id === id ? { ...d, ...data, id } : { ...d }));
+export const crudEdit = (key, data, id) => write(key, read(key).map(d => d.id === id ? { ...d, ...data, id } : { ...d }));
 
-export const deleteCrud = (key, id) => write(key, read(key).filter(d => d.id !== id));
+export const crudDelete = (key, id) => write(key, read(key).filter(d => d.id !== id));
